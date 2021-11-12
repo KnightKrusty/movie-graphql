@@ -7,6 +7,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -22,6 +23,15 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "Movies",
+        fieldName: "movieslist",
+        url: "http://localhost:4000",
+        refetchInterval: 60,
+      },
     },
   ],
 };
